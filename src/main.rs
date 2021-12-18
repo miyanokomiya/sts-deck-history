@@ -21,6 +21,7 @@ struct RunData {
     event_choices: Option<Vec<EventChoice>>,
     items_purged: Option<Vec<String>>,
     items_purged_floors: Option<Vec<i32>>,
+    // including relics and potions
     items_purchased: Option<Vec<String>>,
     item_purchase_floors: Option<Vec<i32>>,
     campfire_choices: Option<Vec<CampfireChoice>>,
@@ -90,6 +91,20 @@ fn main() {
         _ => (),
     }
 
+    let mut items_purged_map: HashMap<i32, Vec<String>> = HashMap::new();
+    match deserialized.items_purged {
+        Some(ips) => {
+            let ipfs = deserialized.items_purged_floors.unwrap();
+            for (i, ip) in ips.iter().enumerate() {
+                items_purged_map
+                    .entry(ipfs[i])
+                    .or_insert(vec![])
+                    .push(ip.clone());
+            }
+        }
+        _ => (),
+    }
+
     let mut campfire_choice_map: HashMap<i32, CampfireChoice> = HashMap::new();
     match deserialized.campfire_choices {
         Some(cfcs) => {
@@ -115,6 +130,7 @@ fn main() {
         match reset_current_floor(
             &card_choice_map,
             &items_purchased_map,
+            &items_purged_map,
             &campfire_choice_map,
             &event_choice_map,
             floor,
@@ -136,6 +152,7 @@ const KEY_PURGE: &str = "PURGE";
 fn reset_current_floor(
     card_choice_map: &HashMap<i32, CardChoice>,
     items_purchased_map: &HashMap<i32, Vec<String>>,
+    items_purged_map: &HashMap<i32, Vec<String>>,
     campfire_choice_map: &HashMap<i32, CampfireChoice>,
     event_choice_map: &HashMap<i32, EventChoice>,
     floor: i32,
@@ -161,6 +178,15 @@ fn reset_current_floor(
         Some(ip) => {
             for val in ip {
                 diff.obtained.push(val.clone());
+            }
+        }
+        _ => (),
+    }
+
+    match items_purged_map.get(&floor) {
+        Some(ip) => {
+            for val in ip {
+                diff.removed.push(val.clone());
             }
         }
         _ => (),
