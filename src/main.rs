@@ -38,12 +38,14 @@ struct EventChoice {
     floor: i32,
     cards_obtained: Option<Vec<String>>,
     cards_removed: Option<Vec<String>>,
+    cards_transformed: Option<Vec<String>>,
+    cards_upgraded: Option<Vec<String>>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 struct CampfireChoice {
     floor: i32,
-    key: String, // "PURGE"
+    key: String, // "PURGE" | "SMITH" | etc...
     data: Option<String>,
 }
 
@@ -52,6 +54,8 @@ struct DeckDiff {
     floor: i32,
     obtained: Vec<String>,
     removed: Vec<String>,
+    transformed: Vec<String>,
+    upgraded: Vec<String>,
 }
 
 fn main() {
@@ -86,30 +90,50 @@ fn main() {
         _ => (),
     }
 
-    let mut deck_diff: Vec<DeckDiff> = vec![];
-
-    for floor in 0..deserialized.floor_reached {
-        deck_diff.push(reset_current_floor(
-            &card_choice_map,
-            &items_purchased_map,
-            floor,
-        ));
+    let mut campfire_choice_map: HashMap<i32, CampfireChoice> = HashMap::new();
+    match deserialized.campfire_choices {
+        Some(cfcs) => {
+            for cfc in cfcs {
+                campfire_choice_map.insert(cfc.floor, cfc);
+            }
+        }
+        _ => (),
     }
 
-    println!("{:?}", deck_diff);
+    let mut deck_diff: Vec<DeckDiff> = vec![];
+    for floor in 0..deserialized.floor_reached {
+        match reset_current_floor(
+            &card_choice_map,
+            &items_purchased_map,
+            &campfire_choice_map,
+            floor,
+        ) {
+            Some(res) => deck_diff.push(res),
+            _ => (),
+        }
+    }
+
+    for diff in deck_diff {
+        println!("{:?}", diff);
+    }
 }
 
 const PICK_SKIP: &str = "SKIP";
+const KEY_SMITH: &str = "SMITH";
+const KEY_PURGE: &str = "PURGE";
 
 fn reset_current_floor(
     card_choice_map: &HashMap<i32, CardChoice>,
     items_purchased_map: &HashMap<i32, Vec<String>>,
+    campfire_choice_map: &HashMap<i32, CampfireChoice>,
     floor: i32,
-) -> DeckDiff {
+) -> Option<DeckDiff> {
     let mut diff = DeckDiff {
         floor,
         obtained: vec![],
         removed: vec![],
+        transformed: vec![],
+        upgraded: vec![],
     };
 
     match card_choice_map.get(&floor) {
@@ -130,5 +154,20 @@ fn reset_current_floor(
         _ => (),
     }
 
-    diff
+    match campfire_choice_map.get(&floor) {
+        Some(cfc) => {
+            if cfc.key == KEY_SMITH {
+                diff.upgraded.push(cfc.data.clone().unwrap());
+            } else if cfc.key == KEY_PURGE {
+                diff.removed.push(cfc.data.clone().unwrap());
+            }
+        }
+        _ => (),
+    }
+
+    if diff.obtained.len() > 0 || diff.removed.len() > 0 {
+        Some(diff)
+    } else {
+        None
+    }
 }
