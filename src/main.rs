@@ -67,11 +67,11 @@ fn main() {
 
     let deserialized: RunData = serde_json::from_reader(reader).unwrap();
 
-    let mut card_choice_map: HashMap<i32, CardChoice> = HashMap::new();
+    let mut card_choice_map: HashMap<i32, Vec<CardChoice>> = HashMap::new();
     match deserialized.card_choices {
         Some(ccs) => {
             for cc in ccs {
-                card_choice_map.insert(cc.floor, cc);
+                card_choice_map.entry(cc.floor).or_insert(vec![]).push(cc);
             }
         }
         _ => (),
@@ -150,7 +150,7 @@ const KEY_SMITH: &str = "SMITH";
 const KEY_PURGE: &str = "PURGE";
 
 fn reset_current_floor(
-    card_choice_map: &HashMap<i32, CardChoice>,
+    card_choice_map: &HashMap<i32, Vec<CardChoice>>,
     items_purchased_map: &HashMap<i32, Vec<String>>,
     items_purged_map: &HashMap<i32, Vec<String>>,
     campfire_choice_map: &HashMap<i32, CampfireChoice>,
@@ -166,9 +166,11 @@ fn reset_current_floor(
     };
 
     match card_choice_map.get(&floor) {
-        Some(cc) => {
-            if cc.picked != PICK_SKIP {
-                diff.obtained.push(cc.picked.clone());
+        Some(ccs) => {
+            for cc in ccs {
+                if cc.picked != PICK_SKIP {
+                    diff.obtained.push(cc.picked.clone());
+                }
             }
         }
         _ => (),
