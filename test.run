@@ -1,0 +1,1122 @@
+{
+   "gold_per_floor":[
+      13,
+      28,
+      28,
+      49,
+      6,
+      39,
+      39,
+      77,
+      126,
+      149,
+      149,
+      149,
+      190,
+      215,
+      215,
+      311,
+      311,
+      330,
+      330,
+      345,
+      345,
+      365,
+      409,
+      6,
+      6,
+      6,
+      49,
+      63,
+      76,
+      109,
+      129,
+      129,
+      228,
+      228,
+      243,
+      576,
+      79,
+      92,
+      92,
+      127,
+      127,
+      162,
+      189,
+      220,
+      236,
+      256,
+      269,
+      283,
+      283,
+      283,
+      283,
+      283,
+      283,
+      101,
+      132,
+      132
+   ],
+   "floor_reached":57,
+   "playtime":4878,
+   "items_purged":[
+      "Combust+1",
+      "Sever Soul",
+      "Twin Strike"
+   ],
+   "score":3298,
+   "play_id":"a619ab1d-3a8b-47e8-83a6-f7412be314b6",
+   "local_time":"20211218005406",
+   "is_ascension_mode":true,
+   "campfire_choices":[
+      {
+         "data":"Shockwave",
+         "floor":7,
+         "key":"SMITH"
+      },
+      {
+         "data":"Shrug It Off",
+         "floor":15,
+         "key":"SMITH"
+      },
+      {
+         "data":"Evolve",
+         "floor":32,
+         "key":"SMITH"
+      },
+      {
+         "data":"Feed",
+         "floor":41,
+         "key":"SMITH"
+      },
+      {
+         "floor":49,
+         "key":"RECALL"
+      },
+      {
+         "data":"Ghostly",
+         "floor":53,
+         "key":"SMITH"
+      }
+   ],
+   "neow_cost":"NO_GOLD",
+   "seed_source_timestamp":2901026384800100,
+   "circlet_count":0,
+   "master_deck":[
+      "AscendersBane",
+      "Bash",
+      "Pummel",
+      "Shockwave+1",
+      "Evolve+1",
+      "Disarm",
+      "Metallicize",
+      "Shrug It Off+1",
+      "Sever Soul",
+      "Combust+1",
+      "Rupture+1",
+      "Feed+1",
+      "Intimidate",
+      "Infernal Blade",
+      "Feel No Pain+1",
+      "Offering",
+      "Shockwave",
+      "Dropkick",
+      "Ghostly+1",
+      "Ghostly",
+      "Ghostly",
+      "Power Through+1",
+      "Dropkick",
+      "Fiend Fire",
+      "Dark Embrace+1",
+      "Offering",
+      "Barricade+1",
+      "Dual Wield+1",
+      "Ghostly",
+      "Feel No Pain+1",
+      "Offering",
+      "Body Slam+1",
+      "Intimidate+1",
+      "Shrug It Off+1"
+   ],
+   "relics":[
+      "Burning Blood",
+      "Frozen Egg 2",
+      "Bag of Marbles",
+      "Mercury Hourglass",
+      "Pandora\u0027s Box",
+      "Matryoshka",
+      "Orichalcum",
+      "Art of War",
+      "Eternal Feather",
+      "Charon\u0027s Ashes",
+      "Centennial Puzzle",
+      "Philosopher\u0027s Stone",
+      "DollysMirror",
+      "MealTicket",
+      "Bronze Scales",
+      "Dream Catcher",
+      "Mango",
+      "Vajra",
+      "Toxic Egg 2"
+   ],
+   "potions_floor_usage":[
+      6,
+      10,
+      13,
+      16,
+      27,
+      27,
+      56,
+      56
+   ],
+   "damage_taken":[
+      {
+         "damage":2,
+         "enemies":"Jaw Worm",
+         "floor":1,
+         "turns":5
+      },
+      {
+         "damage":9,
+         "enemies":"Small Slimes",
+         "floor":2,
+         "turns":4
+      },
+      {
+         "damage":4,
+         "enemies":"Cultist",
+         "floor":4,
+         "turns":3
+      },
+      {
+         "damage":23,
+         "enemies":"Gremlin Nob",
+         "floor":6,
+         "turns":4
+      },
+      {
+         "damage":45,
+         "enemies":"3 Sentries",
+         "floor":8,
+         "turns":12
+      },
+      {
+         "damage":4,
+         "enemies":"Large Slime",
+         "floor":10,
+         "turns":5
+      },
+      {
+         "damage":22,
+         "enemies":"Gremlin Nob",
+         "floor":13,
+         "turns":4
+      },
+      {
+         "damage":22,
+         "enemies":"Blue Slaver",
+         "floor":14,
+         "turns":3
+      },
+      {
+         "damage":27,
+         "enemies":"Slime Boss",
+         "floor":16,
+         "turns":8
+      },
+      {
+         "damage":12,
+         "enemies":"3 Byrds",
+         "floor":18,
+         "turns":4
+      },
+      {
+         "damage":4,
+         "enemies":"2 Thieves",
+         "floor":20,
+         "turns":4
+      },
+      {
+         "damage":26,
+         "enemies":"Shelled Parasite and Fungi",
+         "floor":22,
+         "turns":7
+      },
+      {
+         "damage":10,
+         "enemies":"Book of Stabbing",
+         "floor":23,
+         "turns":5
+      },
+      {
+         "damage":9,
+         "enemies":"Slavers",
+         "floor":27,
+         "turns":6
+      },
+      {
+         "damage":2,
+         "enemies":"Sentry and Sphere",
+         "floor":28,
+         "turns":5
+      },
+      {
+         "damage":1,
+         "enemies":"Chosen and Byrds",
+         "floor":29,
+         "turns":4
+      },
+      {
+         "damage":9,
+         "enemies":"Book of Stabbing",
+         "floor":30,
+         "turns":6
+      },
+      {
+         "damage":7,
+         "enemies":"Snake Plant",
+         "floor":31,
+         "turns":4
+      },
+      {
+         "damage":10,
+         "enemies":"Collector",
+         "floor":33,
+         "turns":5
+      },
+      {
+         "damage":7,
+         "enemies":"3 Darklings",
+         "floor":35,
+         "turns":5
+      },
+      {
+         "damage":3,
+         "enemies":"3 Shapes",
+         "floor":38,
+         "turns":3
+      },
+      {
+         "damage":8,
+         "enemies":"Reptomancer",
+         "floor":40,
+         "turns":5
+      },
+      {
+         "damage":3,
+         "enemies":"Nemesis",
+         "floor":42,
+         "turns":6
+      },
+      {
+         "damage":8,
+         "enemies":"Reptomancer",
+         "floor":44,
+         "turns":4
+      },
+      {
+         "damage":8,
+         "enemies":"Sphere and 2 Shapes",
+         "floor":45,
+         "turns":3
+      },
+      {
+         "damage":3,
+         "enemies":"Jaw Worm Horde",
+         "floor":46,
+         "turns":3
+      },
+      {
+         "damage":3,
+         "enemies":"Spire Growth",
+         "floor":47,
+         "turns":4
+      },
+      {
+         "damage":7,
+         "enemies":"3 Darklings",
+         "floor":48,
+         "turns":5
+      },
+      {
+         "damage":14,
+         "enemies":"Time Eater",
+         "floor":50,
+         "turns":7
+      },
+      {
+         "damage":3,
+         "enemies":"Awakened One",
+         "floor":51,
+         "turns":7
+      },
+      {
+         "damage":7,
+         "enemies":"Shield and Spear",
+         "floor":55,
+         "turns":5
+      },
+      {
+         "damage":26,
+         "enemies":"The Heart",
+         "floor":56,
+         "turns":7
+      }
+   ],
+   "seed_played":"7402804584993131994",
+   "potions_obtained":[
+      {
+         "floor":4,
+         "key":"SteroidPotion"
+      },
+      {
+         "floor":6,
+         "key":"Ancient Potion"
+      },
+      {
+         "floor":8,
+         "key":"SkillPotion"
+      },
+      {
+         "floor":13,
+         "key":"ElixirPotion"
+      },
+      {
+         "floor":14,
+         "key":"DistilledChaos"
+      },
+      {
+         "floor":27,
+         "key":"SteroidPotion"
+      },
+      {
+         "floor":29,
+         "key":"SpeedPotion"
+      },
+      {
+         "floor":30,
+         "key":"Strength Potion"
+      },
+      {
+         "floor":45,
+         "key":"ElixirPotion"
+      }
+   ],
+   "is_trial":false,
+   "path_per_floor":[
+      "M",
+      "M",
+      "?",
+      "M",
+      "$",
+      "E",
+      "R",
+      "E",
+      "T",
+      "M",
+      "?",
+      "?",
+      "E",
+      "M",
+      "R",
+      "B",
+      null,
+      "M",
+      "?",
+      "M",
+      "?",
+      "M",
+      "E",
+      "$",
+      "?",
+      "T",
+      "E",
+      "M",
+      "M",
+      "E",
+      "M",
+      "R",
+      "B",
+      null,
+      "M",
+      "?",
+      "$",
+      "M",
+      "T",
+      "E",
+      "R",
+      "E",
+      "T",
+      "E",
+      "M",
+      "M",
+      "M",
+      "M",
+      "R",
+      "B",
+      "B",
+      null,
+      "R",
+      "$",
+      "E",
+      "B",
+      null
+   ],
+   "character_chosen":"IRONCLAD",
+   "items_purchased":[
+      "Metallicize",
+      "Dark Embrace+1",
+      "Regen Potion",
+      "Orichalcum",
+      "DollysMirror",
+      "Feel No Pain+1",
+      "Offering",
+      "Swift Potion"
+   ],
+   "campfire_rested":0,
+   "item_purchase_floors":[
+      5,
+      24,
+      24,
+      24,
+      37,
+      37,
+      37,
+      54
+   ],
+   "current_hp_per_floor":[
+      72,
+      69,
+      68,
+      68,
+      68,
+      51,
+      51,
+      12,
+      12,
+      14,
+      14,
+      68,
+      52,
+      36,
+      36,
+      15,
+      55,
+      49,
+      34,
+      34,
+      34,
+      17,
+      13,
+      13,
+      13,
+      13,
+      28,
+      35,
+      40,
+      40,
+      42,
+      49,
+      48,
+      51,
+      53,
+      53,
+      53,
+      58,
+      58,
+      59,
+      61,
+      79,
+      79,
+      81,
+      83,
+      98,
+      103,
+      106,
+      107,
+      99,
+      106,
+      110,
+      111,
+      111,
+      118,
+      98
+   ],
+   "gold":132,
+   "neow_bonus":"TRANSFORM_TWO_CARDS",
+   "is_prod":false,
+   "is_daily":false,
+   "chose_seed":false,
+   "campfire_upgraded":5,
+   "win_rate":0,
+   "timestamp":1639756446,
+   "path_taken":[
+      "M",
+      "M",
+      "?",
+      "M",
+      "$",
+      "E",
+      "R",
+      "E",
+      "T",
+      "M",
+      "?",
+      "?",
+      "E",
+      "?",
+      "R",
+      "BOSS",
+      "M",
+      "?",
+      "M",
+      "?",
+      "M",
+      "E",
+      "$",
+      "?",
+      "T",
+      "E",
+      "M",
+      "M",
+      "E",
+      "M",
+      "R",
+      "BOSS",
+      "M",
+      "?",
+      "$",
+      "M",
+      "?",
+      "E",
+      "R",
+      "E",
+      "T",
+      "E",
+      "M",
+      "M",
+      "M",
+      "M",
+      "R",
+      "BOSS",
+      "BOSS",
+      "R",
+      "$",
+      "E",
+      "BOSS"
+   ],
+   "build_version":"2020-12-22",
+   "purchased_purges":3,
+   "victory":true,
+   "max_hp_per_floor":[
+      75,
+      75,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      68,
+      34,
+      34,
+      34,
+      37,
+      37,
+      37,
+      37,
+      37,
+      40,
+      43,
+      43,
+      46,
+      49,
+      49,
+      52,
+      52,
+      55,
+      55,
+      55,
+      58,
+      58,
+      61,
+      61,
+      79,
+      79,
+      83,
+      87,
+      99,
+      103,
+      107,
+      107,
+      107,
+      111,
+      111,
+      111,
+      111,
+      119,
+      119
+   ],
+   "card_choices":[
+      {
+         "not_picked":[
+            "Warcry",
+            "Flame Barrier"
+         ],
+         "picked":"Pummel",
+         "floor":1
+      },
+      {
+         "not_picked":[
+            "Seeing Red",
+            "Intimidate"
+         ],
+         "picked":"Evolve",
+         "floor":2
+      },
+      {
+         "not_picked":[
+            "Uppercut",
+            "Flame Barrier"
+         ],
+         "picked":"Disarm",
+         "floor":4
+      },
+      {
+         "not_picked":[
+            "Havoc",
+            "Evolve+1"
+         ],
+         "picked":"Shrug It Off",
+         "floor":6
+      },
+      {
+         "not_picked":[
+            "Perfected Strike",
+            "Wild Strike"
+         ],
+         "picked":"Sever Soul",
+         "floor":8
+      },
+      {
+         "not_picked":[
+            "Evolve+1",
+            "Thunderclap"
+         ],
+         "picked":"Combust+1",
+         "floor":10
+      },
+      {
+         "not_picked":[
+            "Flex",
+            "Rage"
+         ],
+         "picked":"Twin Strike",
+         "floor":13
+      },
+      {
+         "not_picked":[
+            "Intimidate",
+            "Wild Strike"
+         ],
+         "picked":"Rupture+1",
+         "floor":14
+      },
+      {
+         "not_picked":[
+            "Barricade+1",
+            "Demon Form+1"
+         ],
+         "picked":"Feed",
+         "floor":16
+      },
+      {
+         "not_picked":[
+            "Havoc",
+            "Wild Strike"
+         ],
+         "picked":"Dropkick",
+         "floor":18
+      },
+      {
+         "not_picked":[
+            "Seeing Red",
+            "Fire Breathing+1"
+         ],
+         "picked":"Power Through+1",
+         "floor":20
+      },
+      {
+         "not_picked":[
+            "Flex",
+            "Perfected Strike"
+         ],
+         "picked":"Dropkick",
+         "floor":22
+      },
+      {
+         "not_picked":[
+            "Sever Soul",
+            "Disarm"
+         ],
+         "picked":"Fiend Fire",
+         "floor":23
+      },
+      {
+         "not_picked":[
+            "Twin Strike",
+            "Sword Boomerang"
+         ],
+         "picked":"Offering",
+         "floor":27
+      },
+      {
+         "not_picked":[
+            "Cleave+1",
+            "Dual Wield",
+            "Wild Strike"
+         ],
+         "picked":"SKIP",
+         "floor":28
+      },
+      {
+         "not_picked":[
+            "Wild Strike",
+            "Heavy Blade",
+            "Havoc"
+         ],
+         "picked":"SKIP",
+         "floor":29
+      },
+      {
+         "not_picked":[
+            "Wild Strike",
+            "Heavy Blade",
+            "Havoc"
+         ],
+         "picked":"SKIP",
+         "floor":29
+      },
+      {
+         "not_picked":[
+            "Headbutt",
+            "Metallicize+1",
+            "Uppercut"
+         ],
+         "picked":"SKIP",
+         "floor":30
+      },
+      {
+         "not_picked":[
+            "Clash",
+            "Bloodletting",
+            "Sword Boomerang"
+         ],
+         "picked":"SKIP",
+         "floor":31
+      },
+      {
+         "not_picked":[
+            "Exhume",
+            "Demon Form+1"
+         ],
+         "picked":"Barricade+1",
+         "floor":33
+      },
+      {
+         "not_picked":[
+            "Perfected Strike",
+            "Flex"
+         ],
+         "picked":"Dual Wield+1",
+         "floor":35
+      },
+      {
+         "not_picked":[
+            "Inflame+1",
+            "Sword Boomerang",
+            "Clothesline"
+         ],
+         "picked":"SKIP",
+         "floor":38
+      },
+      {
+         "not_picked":[
+            "Thunderclap",
+            "Heavy Blade+1"
+         ],
+         "picked":"Body Slam+1",
+         "floor":40
+      },
+      {
+         "not_picked":[
+            "Demon Form+1",
+            "Clothesline",
+            "Combust+1"
+         ],
+         "picked":"SKIP",
+         "floor":42
+      },
+      {
+         "not_picked":[
+            "Sword Boomerang+1",
+            "Perfected Strike"
+         ],
+         "picked":"Intimidate+1",
+         "floor":44
+      },
+      {
+         "not_picked":[
+            "Iron Wave+1",
+            "Body Slam+1",
+            "Bloodletting+1"
+         ],
+         "picked":"SKIP",
+         "floor":45
+      },
+      {
+         "not_picked":[
+            "Spot Weakness+1",
+            "Demon Form+1",
+            "Uppercut"
+         ],
+         "picked":"SKIP",
+         "floor":46
+      },
+      {
+         "not_picked":[
+            "Spot Weakness+1",
+            "Demon Form+1",
+            "Uppercut"
+         ],
+         "picked":"SKIP",
+         "floor":46
+      },
+      {
+         "not_picked":[
+            "Flex+1",
+            "Sword Boomerang+1",
+            "Battle Trance+1"
+         ],
+         "picked":"SKIP",
+         "floor":47
+      },
+      {
+         "not_picked":[
+            "Flex+1",
+            "Inflame+1"
+         ],
+         "picked":"Shrug It Off+1",
+         "floor":48
+      },
+      {
+         "not_picked":[
+            "Battle Trance+1",
+            "Flex+1",
+            "Shrug It Off+1"
+         ],
+         "picked":"SKIP",
+         "floor":55
+      }
+   ],
+   "player_experience":1182422,
+   "relics_obtained":[
+      {
+         "floor":6,
+         "key":"Frozen Egg 2"
+      },
+      {
+         "floor":8,
+         "key":"Bag of Marbles"
+      },
+      {
+         "floor":13,
+         "key":"Mercury Hourglass"
+      },
+      {
+         "floor":23,
+         "key":"Matryoshka"
+      },
+      {
+         "floor":26,
+         "key":"Art of War"
+      },
+      {
+         "floor":26,
+         "key":"Eternal Feather"
+      },
+      {
+         "floor":27,
+         "key":"Charon\u0027s Ashes"
+      },
+      {
+         "floor":30,
+         "key":"Centennial Puzzle"
+      },
+      {
+         "floor":39,
+         "key":"MealTicket"
+      },
+      {
+         "floor":39,
+         "key":"Bronze Scales"
+      },
+      {
+         "floor":40,
+         "key":"Dream Catcher"
+      },
+      {
+         "floor":42,
+         "key":"Mango"
+      },
+      {
+         "floor":43,
+         "key":"Vajra"
+      },
+      {
+         "floor":44,
+         "key":"Toxic Egg 2"
+      }
+   ],
+   "event_choices":[
+      {
+         "damage_healed":0,
+         "gold_gain":0,
+         "player_choice":"Lose Max HP",
+         "damage_taken":0,
+         "relics_obtained":[
+            "Golden Idol"
+         ],
+         "max_hp_gain":0,
+         "max_hp_loss":7,
+         "event_name":"Golden Idol",
+         "floor":3,
+         "gold_loss":0
+      },
+      {
+         "damage_healed":0,
+         "gold_gain":0,
+         "player_choice":"Searched \u00271\u0027 times",
+         "damage_taken":0,
+         "max_hp_gain":0,
+         "max_hp_loss":0,
+         "event_name":"Dead Adventurer",
+         "floor":11,
+         "gold_loss":0
+      },
+      {
+         "cards_removed":[
+            "Pummel"
+         ],
+         "damage_healed":54,
+         "gold_gain":0,
+         "player_choice":"Offered Uncommon",
+         "damage_taken":0,
+         "max_hp_gain":0,
+         "max_hp_loss":0,
+         "event_name":"Bonfire Elementals",
+         "floor":12,
+         "gold_loss":0
+      },
+      {
+         "damage_healed":0,
+         "gold_gain":0,
+         "player_choice":"Became a Ghost",
+         "damage_taken":0,
+         "max_hp_gain":0,
+         "max_hp_loss":34,
+         "event_name":"Ghosts",
+         "floor":19,
+         "gold_loss":0,
+         "cards_obtained":[
+            "Ghostly",
+            "Ghostly",
+            "Ghostly"
+         ]
+      },
+      {
+         "damage_healed":0,
+         "gold_gain":0,
+         "player_choice":"Ignored",
+         "damage_taken":0,
+         "max_hp_gain":0,
+         "max_hp_loss":0,
+         "event_name":"Cursed Tome",
+         "floor":21,
+         "gold_loss":0
+      },
+      {
+         "damage_healed":0,
+         "gold_gain":0,
+         "player_choice":"Ignored",
+         "damage_taken":0,
+         "max_hp_gain":0,
+         "max_hp_loss":0,
+         "event_name":"The Mausoleum",
+         "floor":25,
+         "gold_loss":0
+      },
+      {
+         "damage_healed":0,
+         "gold_gain":333,
+         "player_choice":"Gave Idol",
+         "damage_taken":0,
+         "max_hp_gain":0,
+         "max_hp_loss":0,
+         "event_name":"The Moai Head",
+         "floor":36,
+         "relics_lost":[
+            "Golden Idol"
+         ],
+         "gold_loss":0
+      }
+   ],
+   "is_beta":false,
+   "boss_relics":[
+      {
+         "not_picked":[
+            "Runic Pyramid",
+            "Cursed Key"
+         ],
+         "picked":"Pandora\u0027s Box"
+      },
+      {
+         "not_picked":[
+            "Black Star",
+            "Snecko Eye"
+         ],
+         "picked":"Philosopher\u0027s Stone"
+      }
+   ],
+   "items_purged_floors":[
+      24,
+      37,
+      54
+   ],
+   "is_endless":false,
+   "potions_floor_spawned":[
+      4,
+      6,
+      8,
+      13,
+      14,
+      27,
+      29,
+      30,
+      33,
+      42,
+      44,
+      45,
+      48
+   ],
+   "ascension_level":20
+}
