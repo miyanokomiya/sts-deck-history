@@ -100,12 +100,23 @@ fn main() {
         _ => (),
     }
 
+    let mut event_choice_map: HashMap<i32, EventChoice> = HashMap::new();
+    match deserialized.event_choices {
+        Some(ecs) => {
+            for ec in ecs {
+                event_choice_map.insert(ec.floor, ec);
+            }
+        }
+        _ => (),
+    }
+
     let mut deck_diff: Vec<DeckDiff> = vec![];
     for floor in 0..deserialized.floor_reached {
         match reset_current_floor(
             &card_choice_map,
             &items_purchased_map,
             &campfire_choice_map,
+            &event_choice_map,
             floor,
         ) {
             Some(res) => deck_diff.push(res),
@@ -126,6 +137,7 @@ fn reset_current_floor(
     card_choice_map: &HashMap<i32, CardChoice>,
     items_purchased_map: &HashMap<i32, Vec<String>>,
     campfire_choice_map: &HashMap<i32, CampfireChoice>,
+    event_choice_map: &HashMap<i32, EventChoice>,
     floor: i32,
 ) -> Option<DeckDiff> {
     let mut diff = DeckDiff {
@@ -165,7 +177,49 @@ fn reset_current_floor(
         _ => (),
     }
 
-    if diff.obtained.len() > 0 || diff.removed.len() > 0 {
+    match event_choice_map.get(&floor) {
+        Some(ec) => {
+            match ec.cards_obtained.clone() {
+                Some(values) => {
+                    for v in values {
+                        diff.obtained.push(v);
+                    }
+                }
+                _ => (),
+            }
+            match ec.cards_removed.clone() {
+                Some(values) => {
+                    for v in values {
+                        diff.removed.push(v);
+                    }
+                }
+                _ => (),
+            }
+            match ec.cards_transformed.clone() {
+                Some(values) => {
+                    for v in values {
+                        diff.transformed.push(v);
+                    }
+                }
+                _ => (),
+            }
+            match ec.cards_upgraded.clone() {
+                Some(values) => {
+                    for v in values {
+                        diff.upgraded.push(v);
+                    }
+                }
+                _ => (),
+            }
+        }
+        _ => (),
+    }
+
+    if diff.obtained.len() > 0
+        || diff.removed.len() > 0
+        || diff.transformed.len() > 0
+        || diff.upgraded.len() > 0
+    {
         Some(diff)
     } else {
         None
