@@ -1,10 +1,12 @@
+mod resource;
+
 use clap::Parser;
-
 use serde::{Deserialize, Serialize};
-
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::BufReader;
+
+use resource::Resource;
 
 /// Simple program to greet a person
 #[derive(Parser, Debug)]
@@ -26,6 +28,7 @@ struct RunData {
     item_purchase_floors: Option<Vec<i32>>,
     campfire_choices: Option<Vec<CampfireChoice>>,
     floor_reached: i32,
+    character_chosen: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -57,6 +60,102 @@ struct DeckDiff {
     removed: Vec<String>,
     transformed: Vec<String>,
     upgraded: Vec<String>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct MasterDeck {
+    cards: Vec<String>,
+    unknown_obtained: Vec<String>,
+    unknown_removed: Vec<String>,
+}
+
+impl MasterDeck {
+    fn new(cards: Vec<String>) -> MasterDeck {
+        MasterDeck {
+            cards,
+            unknown_obtained: vec![],
+            unknown_removed: vec![],
+        }
+    }
+
+    fn obtain(&mut self, card: String) {
+        self.cards.push(card);
+    }
+
+    fn remove(&mut self, card: String) {
+        match self.cards.iter().position(|c| *c == card) {
+            Some(index) => {
+                self.cards.remove(index);
+            }
+            _ => {
+                self.unknown_obtained.push(card);
+            }
+        }
+    }
+
+    fn upgrade(&mut self, card: String) {
+        let upgraded = upgrade_card(card.clone());
+        match self.cards.iter().position(|c| *c == card) {
+            Some(index) => self.cards[index] = upgraded,
+            _ => {
+                self.unknown_obtained.push(card);
+                self.obtain(upgraded);
+            }
+        }
+    }
+
+    fn downgrade(&mut self, card: String) {
+        let downgraded = downgrade_card(card.clone());
+        match self.cards.iter().position(|c| *c == card) {
+            Some(index) => self.cards[index] = downgraded,
+            _ => {
+                self.unknown_obtained.push(card);
+                self.obtain(downgraded);
+            }
+        }
+    }
+
+    fn merge_at_last(&mut self, last_cards: &Vec<String>) {
+        let mut current = self.cards.clone();
+        last_cards
+            .iter()
+            .for_each(|lc| match current.iter().position(|c| c == lc) {
+                Some(index) => {
+                    current.remove(index);
+                }
+                _ => {
+                    self.unknown_obtained.push(lc.clone());
+                    self.obtain(lc.clone());
+                }
+            });
+
+        current.iter().for_each(|c| {
+            self.unknown_removed.push(c.clone());
+            self.remove(c.clone());
+        });
+    }
+
+    fn redo(&mut self, diff: &DeckDiff) {
+        diff.obtained.iter().for_each(|c| self.obtain((*c).clone()));
+        diff.upgraded
+            .iter()
+            .for_each(|c| self.upgrade((*c).clone()));
+        diff.removed.iter().for_each(|c| self.remove((*c).clone()));
+        diff.transformed
+            .iter()
+            .for_each(|c| self.remove((*c).clone()));
+    }
+
+    fn undo(&mut self, diff: &DeckDiff) {
+        diff.transformed
+            .iter()
+            .for_each(|c| self.obtain((*c).clone()));
+        diff.removed.iter().for_each(|c| self.obtain((*c).clone()));
+        diff.upgraded
+            .iter()
+            .for_each(|c| self.downgrade((*c).clone()));
+        diff.obtained.iter().for_each(|c| self.remove((*c).clone()));
+    }
 }
 
 fn main() {
@@ -140,9 +239,17 @@ fn main() {
         }
     }
 
-    for diff in deck_diff {
-        println!("{:?}", diff);
-    }
+    // for diff in deck_diff {
+    //     println!("{:?}", diff);
+    // }
+
+    let mut master_deck = MasterDeck::new(Resource::get_origin_deck(deserialized.character_chosen));
+    // deck_diff.reverse();
+    deck_diff.iter().for_each(|d| master_deck.redo(d));
+    master_deck.merge_at_last(&deserialized.master_deck);
+    println!("last: {:?}", master_deck.cards);
+    println!("obtained?: {:?}", master_deck.unknown_obtained);
+    println!("removed?: {:?}", master_deck.unknown_removed);
 }
 
 const PICK_SKIP: &str = "SKIP";
@@ -251,5 +358,31 @@ fn reset_current_floor(
         Some(diff)
     } else {
         None
+    }
+}
+
+fn get_card_upgraded(card: String) -> (String, i32) {
+    let splited: Vec<&str> = card.split("+").collect();
+    if splited.len() == 0 {
+        (card, 0)
+    } else {
+        match splited.last().unwrap().parse::<i32>() {
+            Ok(level) => (splited.first().unwrap().to_string(), level),
+            _ => (card, 0),
+        }
+    }
+}
+
+fn upgrade_card(card: String) -> String {
+    let (name, level) = get_card_upgraded(card);
+    name + "+" + &(level + 1).to_string()
+}
+
+fn downgrade_card(card: String) -> String {
+    let (name, level) = get_card_upgraded(card);
+    if level > 1 {
+        name + "+" + &(level - 1).to_string()
+    } else {
+        name
     }
 }
